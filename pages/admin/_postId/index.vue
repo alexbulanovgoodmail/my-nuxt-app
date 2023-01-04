@@ -8,7 +8,9 @@
 
 <script>
 export default {
+  middleware: ['check-auth', 'auth'],
   layout: 'admin',
+
   asyncData(context) {
     return context.$axios
       .get(process.env.baseUrl + '/posts/' + context.params.postId + '.json')

@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  middleware: ['check-auth', 'auth'],
   layout: 'admin',
   methods: {
     onSubmitted(postData) {

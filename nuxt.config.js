@@ -35,6 +35,7 @@ export default {
     //     component: resolve(__dirname, 'pages/index.vue'),
     //   })
     // },
+    middleware: 'log',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -109,6 +110,7 @@ export default {
     baseUrl:
       process.env.BASE_URL ||
       'https://my-nuxt-app-dae70-default-rtdb.europe-west1.firebasedatabase.app',
+    fbAPIKey: 'AIzaSyCcC2POAaeQfHe80YyHp8i2v4mW7zXt4fs',
   },
   // generate: {},
   transition: {

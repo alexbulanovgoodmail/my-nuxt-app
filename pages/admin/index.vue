@@ -1,6 +1,7 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
+      <UIAppButton type="button" @click="onLogout">Logout</UIAppButton>
       <UIAppButton type="button" @click="$router.push('/admin/new-post/')">
         Create Post
       </UIAppButton>
@@ -14,11 +15,18 @@
 
 <script>
 export default {
+  middleware: ['check-auth', 'auth'],
   layout: 'admin',
 
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts
+    },
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch('logout')
+      this.$router.push('/admin/auth/')
     },
   },
 }
